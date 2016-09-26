@@ -6,13 +6,13 @@
         "pomirleanu",
         "GifCreate"
     ],
-    "homepage": "https://github.com/pomirleanu/GifCreate",
+    "homepage": "https://github.com/pomirleanu/gif-create",
     "license": "MIT",
     "authors": [
         {
             "name": "Pomirleanu Florentin Cristinel",
             "email": "pomirleanu.florentin@gmail.com",
-            "homepage": "printreblocuri.ro",
+            "homepage": "http://printreblocuri.ro",
             "role": "Developer"
         }
     ],
