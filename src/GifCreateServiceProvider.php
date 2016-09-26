@@ -14,7 +14,7 @@ class GifCreateServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes(array(
-            __DIR__.'/../../config/config.php' => config_path('gif.php')
+            __DIR__.'/config/config.php' => config_path('gif.php')
         ));
     }
 
@@ -28,7 +28,7 @@ class GifCreateServiceProvider extends ServiceProvider
         $app = $this->app;
         // merge default config
         $this->mergeConfigFrom(
-            __DIR__.'../config/config.php',
+            __DIR__.'/config/config.php',
             'gif'
         );
         // create image

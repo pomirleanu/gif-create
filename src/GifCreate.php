@@ -1,6 +1,6 @@
 <?php
 
-namespace pomirleanu\GifCreate;
+namespace Pomirleanu\GifCreate;
 
 class GifCreate
 {
