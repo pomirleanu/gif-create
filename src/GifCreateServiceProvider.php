@@ -32,9 +32,9 @@ class GifCreateServiceProvider extends ServiceProvider
             'gif'
         );
         // create image
-        $app['gif'] = $app->share(function ($app) {
-            return new GifCreate($app['config']->get('gif'));
-        });
+//        $app['gif'] = $app->share(function ($app) {
+//            return new GifCreate($app['config']->get('gif'));
+//        });
         $app->alias('gif', 'Pomirleanu\GifCreate');
     }
 }
