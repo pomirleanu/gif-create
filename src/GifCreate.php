@@ -109,7 +109,7 @@ class GifCreate
      * @param int  $durations
      * @param null $loop
      *
-     * @return \pomirleanu\GifCreate\GifCreate
+     * @return \Pomirleanu\GifCreate\GifCreate
      * @throws \Exception
      */
     public function create($frames, $durations = 10, $loop = null)
@@ -117,7 +117,9 @@ class GifCreate
         if (count($frames) < 2) {
             throw new \Exception(sprintf($this->errors[ 'ERR06' ]));
         }
-        $this->setIfSet($durations, $loop);
+
+        // Update loop value if passed in.
+        $this->mergeConfigIfSet('loop', $loop);
 
         // Check if $frames is a dir; get all files in ascending order if yes (else die):
         if (! is_array($frames)) {
@@ -146,14 +148,18 @@ class GifCreate
         return $this->buildFrameSources($frames, $durations);
     }
 
-
-    private function setIfSet($loop)
+    /**
+     * If value is non-null value, overwrite or add to internal config.
+     *
+     * @param $key
+     * @param $value
+     */
+    private function mergeConfigIfSet($key, $value)
     {
-        if ($loop !== null) {
-            $this->config[ 'loop' ] = $loop;
+        if ($value !== null) {
+            $this->config[$key] = $value;
         }
     }
-
 
     /**
      * Building the frame sources for the given images
