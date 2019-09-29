@@ -47,7 +47,11 @@ $durations = array(20, 30, 10, 10);
 **2. Create the GIF:**
 
 ``` php
-$gif = new GifCreator\GifCreator();
+use Pomirleanu\GifCreate;
+
+// ...
+
+$gif = new GifCreate\GifCreate();
 $gif->create($frames, $durations);
 
 // Or: using the default 100ms even delay:
